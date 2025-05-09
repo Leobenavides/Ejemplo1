@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cuestionario</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 50px; }
+    label, select { display: block; margin: 15px auto; width: 200px; }
+    button { padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h1>Cuestionario</h1>
+  <label>¿Qué área te interesa más?
+    <select id="interes">
+      <option value="programacion">Programación</option>
+      <option value="diseño">Diseño</option>
+      <option value="marketing">Marketing</option>
+    </select>
+  </label>
+  <button onclick="evaluar()">Ver cursos recomendados</button>
+
+  <script>
+    function evaluar() {
+      const interes = document.getElementById("interes").value;
+      localStorage.setItem("perfil", interes);
+      window.location.href = "cursos.html";
+    }
+  </script>
+</body>
+</html>
