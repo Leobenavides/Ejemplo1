@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 50px; }
+    input { margin: 5px; padding: 8px; }
+    button { margin: 10px; padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h1>Bienvenido</h1>
+  <p>Ingresa tus datos para continuar</p>
+  <input type="text" id="usuario" placeholder="Usuario"><br>
+  <input type="password" id="clave" placeholder="Contraseña"><br>
+  <button onclick="login()">Iniciar Sesión</button>
+  <button onclick="registrar()">Registrarse</button>
+
+  <script>
+    function login() {
+      // Aquí va la lógica real con backend
+      window.location.href = "cuestionario.html";
+    }
+    function registrar() {
+      alert("Usuario registrado (simulado)");
+    }
+  </script>
+</body>
+</html>
