@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cursos Recomendados</title>
+  <style>
+    body { font-family: sans-serif; padding: 50px; }
+    .curso { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Cursos Recomendados</h1>
+  <div id="listaCursos"></div>
+
+  <script>
+    const cursos = {
+      programacion: [
+        { nombre: "JavaScript Básico", desc: "Aprende JS desde cero" },
+        { nombre: "Python para principiantes", desc: "Curso práctico de Python" }
+      ],
+      diseño: [
+        { nombre: "Diseño UX/UI", desc: "Principios del diseño digital" },
+        { nombre: "Figma Avanzado", desc: "Prototipado rápido con Figma" }
+      ],
+      marketing: [
+        { nombre: "SEO para novatos", desc: "Mejora tu visibilidad en Google" },
+        { nombre: "Redes sociales", desc: "Marketing en Instagram y TikTok" }
+      ]
+    };
+
+    const perfil = localStorage.getItem("perfil");
+    const lista = document.getElementById("listaCursos");
+
+    if (perfil && cursos[perfil]) {
+      cursos[perfil].forEach(curso => {
+        const div = document.createElement("div");
+        div.className = "curso";
+        div.innerHTML = `<strong>${curso.nombre}</strong><p>${curso.desc}</p>`;
+        lista.appendChild(div);
+      });
+    } else {
+      lista.innerHTML = "<p>No se ha detectado un perfil válido.</p>";
+    }
+  </script>
+</body>
+</html>
